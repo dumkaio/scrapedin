@@ -64,6 +64,7 @@ module.exports = async (
   const courses = await scrapAccomplishmentPanel(page, 'courses');
   // const honors = await scrapAccomplishmentPanel(page, 'honors');
   const languages = await scrapAccomplishmentPanel(page, 'languages');
+  
   // const organizations = await scrapAccomplishmentPanel(page, 'organizations');
   // const patents = await scrapAccomplishmentPanel(page, 'patents');
   const projects = await scrapAccomplishmentPanel(page, 'projects');
