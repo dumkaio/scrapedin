@@ -1,4 +1,4 @@
-const profileSelector = '.core-rail > *:first-child section >'
+const profileSelector = '.core-rail > *:first-child section >';
 
 const template = {
   profile: {
@@ -9,16 +9,16 @@ const template = {
       location: `.pv-top-card--list:last-child li:first-child`,
       connections: `.pv-top-card--list:last-child li:nth-child(2)`,
       imageurl: {
-		    selector: `img.pv-top-card__photo`,
-        attribute: 'src'
-      }
-    }
+        selector: `img.pv-top-card__photo`,
+        attribute: 'src',
+      },
+    },
   },
   about: {
     selector: '.pv-about-section',
     fields: {
-      text: 'p'
-    }
+      text: 'p',
+    },
   },
   positions: {
     selector: '#experience-section li:not(.pv-entity__position-group-role-item)',
@@ -30,7 +30,7 @@ const template = {
       },
       url: {
         selector: 'a',
-        attribute: 'href'
+        attribute: 'href',
       },
       companyName: '.pv-entity__secondary-title',
       location: '.pv-entity__location span:last-child',
@@ -45,10 +45,10 @@ const template = {
           description: '.pv-entity__description',
           date1: '.pv-entity__date-range span:last-child',
           date2: '.pv-entity__bullet-item-v2',
-          location: '.pv-entity__location span:last-child'
-        }
-      }
-    }
+          location: '.pv-entity__location span:last-child',
+        },
+      },
+    },
   },
   educations: {
     selector: '#education-section li',
@@ -57,67 +57,79 @@ const template = {
       degree: 'span[class=pv-entity__comma-item]',
       url: {
         selector: 'a',
-        attribute: 'href'
+        attribute: 'href',
       },
-	    fieldOfStudy: 'p.pv-entity__fos span:nth-child(2)',
+      fieldOfStudy: 'p.pv-entity__fos span:nth-child(2)',
       date1: '.pv-entity__dates time:nth-child(1)',
       date2: '.pv-entity__dates time:nth-child(2)',
-      description: '.pv-entity__description'
-    }
+      description: '.pv-entity__description',
+    },
+  },
+  certifications: {
+    selector: '#certifications-section li',
+    fields: {
+      title: 'h3',
+
+      url: {
+        selector: '.pv-certifications-entity__credential-link',
+        attribute: 'href',
+      },
+      issuingAuthority: '.pv-certifications__summary-info p span:nth-child(2)',
+    },
   },
   skills: {
     selector: '.pv-skill-category-entity__skill-wrapper',
     fields: {
       title: '.pv-skill-category-entity__name-text',
-      count: '.pv-skill-category-entity__endorsement-count'
-    }
+      count: '.pv-skill-category-entity__endorsement-count',
+    },
   },
   recommendationsCount: {
     selector: '.recommendations-inlining',
     fields: {
       received: '.artdeco-tab:nth-child(1)',
-      given: '.artdeco-tab:nth-child(2)'
-    }
+      given: '.artdeco-tab:nth-child(2)',
+    },
   },
   recommendationsReceived: {
     selector: '.recommendations-inlining',
     fields: {
       user: {
         selector: '.pv-recommendation-entity__member',
-        attribute: 'href'
+        attribute: 'href',
       },
       text: 'blockquote.pv-recommendation-entity__text',
       profileImage: {
         selector: 'a img',
-        attribute: 'src'
+        attribute: 'src',
       },
       name: {
-        selector: 'a h3'
+        selector: 'a h3',
       },
       userDescription: {
-        selector: '.pv-recommendation-entity__headline'
-      }
-    }
+        selector: '.pv-recommendation-entity__headline',
+      },
+    },
   },
   recommendationsGiven: {
     selector: '.artdeco-tabpanel li.pv-recommendation-entity',
     fields: {
       user: {
         selector: '.pv-recommendation-entity__member',
-        attribute: 'href'
+        attribute: 'href',
       },
       text: 'blockquote.pv-recommendation-entity__text',
       profileImage: {
         selector: 'a img',
-        attribute: 'src'
+        attribute: 'src',
       },
       name: {
-        selector: 'a h3'
+        selector: 'a h3',
       },
       userDescription: {
-        selector: '.pv-recommendation-entity__headline'
-      }
-    }
+        selector: '.pv-recommendation-entity__headline',
+      },
+    },
   },
   accomplishments: {
     selector: '.pv-accomplishments-section > div',
@@ -126,26 +138,26 @@ const template = {
       title: '.pv-accomplishments-block__title',
       items: {
         selector: 'li',
-        isMultipleFields: true
-      }
-    }
+        isMultipleFields: true,
+      },
+    },
   },
   peopleAlsoViewed: {
     selector: 'li.pv-browsemap-section__member-container',
     fields: {
       user: {
         selector: 'a',
-        attribute: 'href'
+        attribute: 'href',
       },
       text: 'p',
       profileImage: {
         selector: 'a img',
-        attribute: 'src'
+        attribute: 'src',
       },
       name: {
-        selector: '.name'
-      }
-    }
+        selector: '.name',
+      },
+    },
   },
   volunteerExperience: {
     selector: 'section.volunteering-section li',
@@ -155,36 +167,101 @@ const template = {
       location: '.pv-entity__location span:nth-child(2)',
       description: '.pv-volunteer-causes',
       date1: '.pv-entity__date-range span:nth-child(2)',
-      date2: '.pv-entity__bullet-item'
-    }
+      date2: '.pv-entity__bullet-item',
+    },
   },
   courses: {
-    selector: '.pv-accomplishments-section',
+    selector: '.pv-accomplishments-block.courses li',
     fields: {
       name: '.pv-accomplishment-entity__title',
-      year: '.pv-accomplishment-entity__course-number'
-    }
+      year: '.pv-accomplishment-entity__course-number',
+    },
+  },
+  honors: {
+    selector: '.pv-accomplishments-block.honors li',
+    fields: {
+      name: '.pv-accomplishment-entity__title',
+      date: '.pv-accomplishment-entity__date',
+      issuer: '.pv-accomplishment-entity__issuer',
+      description: '.pv-accomplishment-entity__description',
+    },
   },
   languages: {
-    selector: '.pv-accomplishments-section',
+    selector: '.pv-accomplishments-block.languages li',
     fields: {
       name: '.pv-accomplishment-entity__title',
       proficiency: '.pv-accomplishment-entity__proficiency',
-    }
+    },
+  },
+  organizations: {
+    selector: '.pv-accomplishments-block.organizations li',
+    fields: {
+      name: '.pv-accomplishment-entity__title',
+      date: '.pv-accomplishment-entity__date',
+      position: '.pv-accomplishment-entity__position',
+      description: '.pv-accomplishment-entity__description',
+    },
+  },
+  patents: {
+    selector: '.pv-accomplishments-block.patents li',
+    fields: {
+      name: '.pv-accomplishment-entity__title',
+      date: '.pv-accomplishment-entity__date',
+      issuer: '.pv-accomplishment-entity__issuer',
+      description: '.pv-accomplishment-entity__description',
+      link: {
+        selector: '.pv-accomplishment-entity__external-source',
+        attribute: 'href',
+      },
+    },
   },
   projects: {
-    selector: '.pv-accomplishments-section',
+    selector: '.pv-accomplishments-block.projects li',
     fields: {
       name: '.pv-accomplishment-entity__title',
       date: '.pv-accomplishment-entity__date',
       description: '.pv-accomplishment-entity__description',
       link: {
         selector: '.pv-accomplishment-entity__external-source',
-        attribute: 'href'
-      }
-    }
-  }
-}
+        attribute: 'href',
+      },
+    },
+  },
+  publications: {
+    selector: '.pv-accomplishments-block.publications li',
+    fields: {
+      name: '.pv-accomplishment-entity__title',
+      date: '.pv-accomplishment-entity__date',
+      publisher: '.pv-accomplishment-entity__publisher',
+      description: '.pv-accomplishment-entity__description',
+      link: {
+        selector: '.pv-accomplishment-entity__external-source',
+        attribute: 'href',
+      },
+    },
+  },
+  'test-scores': {
+    selector: '.pv-accomplishments-block.test-scores li',
+    fields: {
+      name: '.pv-accomplishment-entity__title',
+      date: '.pv-accomplishment-entity__date',
+      score: '.pv-accomplishment-entity__score',
+      description: '.pv-accomplishment-entity__description',
+    },
+  },
+  connections: {
+    selector: 'li.search-result',
+    fields: {
+      name: '.name.actor-name',
+      distance: '.dist-value',
+      position: 'p.subline-level-1',
+      location: 'p.subline-level-2',
+      link: {
+        selector: 'a.search-result__result-link',
+        attribute: 'href',
+      },
+    },
+  },
+};
 
-
-module.exports = template
+module.exports = template;
